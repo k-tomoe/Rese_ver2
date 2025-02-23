@@ -1,5 +1,5 @@
-.header {
-    background: #000;
+body {
+    background: #EEEEEE;
 }
 
 .header__inner {
@@ -14,8 +14,18 @@
     justify-content: space-between;
 }
 
+.header__logo::before {
+    content: "";
+    background: url(../../storage/app/public/menu.png);
+    background-size: cover;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+
 .header__logo {
-    color: #fff;
+    color: #305DFF;
     text-decoration: none;
     font-weight: bold;
     font-size: 24px;
@@ -26,20 +36,18 @@
 }
 
 .header-nav {
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-content: space-between;
 }
 
 .header-nav__link {
-    color: #fff;
     text-decoration: none;
 }
 
 .header-nav__button {
     border: none;
     background: transparent;
-    color: #fff;
     font-size: 16px;
     cursor: pointer;
 }
