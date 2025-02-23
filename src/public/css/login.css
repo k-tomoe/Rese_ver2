@@ -7,15 +7,16 @@
 .login-form {
     width: 500px;
     margin: 100px auto;
+    padding-bottom: 30px;
     background: #fff;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
+    border-radius: 8px;
 }
 
 .login-form__heading {
     margin-bottom: 20px;
     padding: 3px 15px;
-    border-radius: 15px 15px 0 0;
+    border-radius: 8px 8px 0 0;
     background: #305DFF;
     color: #FFFFFF;
 }
@@ -31,9 +32,9 @@
     display: flex;
 }
 
-.form__group-title {
+/* .form__group-title {
     text-align: left;
-}
+} */
 
 .form__error {
     height: 20px;
@@ -62,7 +63,7 @@
     width: 30%;
     height: 40px;
     border: none;
-    border-radius: 3px;
+    border-radius: 8px;
     background: #305DFF;
     color: #fff;
     cursor: pointer;
