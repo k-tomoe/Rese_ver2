@@ -16,7 +16,7 @@
                 <div class="form__group-title">
                 </div>
                 <div class="form__group-content">
-                    <div class="form__input--text">
+                    <div class="form__input--text email__input">
                         <input type="email" name="email" value="{{ old('email') }}" placeholder="Email" />
                     </div>
                     <div class="form__error">
@@ -30,7 +30,7 @@
                 <div class="form__group-title">
                 </div>
                 <div class="form__group-content">
-                    <div class="form__input--text">
+                    <div class="form__input--text password__input">
                         <input type="password" name="password" placeholder="Password" />
                     </div>
                     <div class="form__error">
