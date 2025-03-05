@@ -15,10 +15,18 @@ class RegionsTableSeeder extends Seeder
     public function run()
     {
         $param = [
-            'region' => '北海道'
+            'region' => '大阪府'
         ];
         DB::table('regions')->insert($param);
-        // 作成途中
 
+        $param = [
+            'region' => '東京都'
+        ];
+        DB::table('regions')->insert($param);
+
+        $param = [
+            'region' => '福岡県'
+        ];
+        DB::table('regions')->insert($param);
     }
 }
