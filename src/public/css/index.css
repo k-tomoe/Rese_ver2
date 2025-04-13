@@ -1,21 +1,25 @@
 .shops-list {
     margin: 0 auto;
-    padding: 30px 15px;
+    padding: 10px 10px;
     max-width: 1230px;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .card {
-    width: 300px;
-    height: 300px;
-    margin: 10px auto;
+    width: 280px;
+    height: 280px;
+    margin: 10px 10px;
     background: #fff;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
 }
 
 .card__img {
-    height: 50%;
+    border-radius: 15px 15px 0 0;
+    width: 280px;
+    height: 140px;
+
 }
 
 .card__content {
@@ -25,17 +29,18 @@
 
 .card__content__list {
     display: flex;
+    height: 45px;
 }
 
 .card_action {
     display: flex;
     justify-content: space-between;
-    height: 40px;   
+    height: 40px;
 }
 
 .overview_button {
     background-color: #305DFF;
-    color: #fff;    
+    color: #fff;
     width: 100px;
     border: none;
     text-align: center;
@@ -43,12 +48,16 @@
     cursor: pointer;
 }
 
+.button_link{
+    text-decoration: none;
+    color: #FFF;
+}
+
 .favorite_button {
     content: "";
-    background: url();
+    background: url(../img/favorite_.png);
     background-size: cover;
     vertical-align: middle;
     border: none;
     width: 40px;
 }
-

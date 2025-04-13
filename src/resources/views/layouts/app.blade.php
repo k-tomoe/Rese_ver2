@@ -33,56 +33,55 @@
                         }
                     </script>
 
-                    <div id="popup" class="popup">
-                        <div class="popup__close">
-                            <button class="popup__close" id="no" onclick="nofunc()">×</button><br />
-                        </div>
-
-                        <ul class="popup__menu">
-                            <li class="menu__item">
-                                <a class="header-nav__link" href="/">Home</a>
-                            </li>
-                            <li class="menu__item">
-                                <a class="header-nav__link" href="/register">Registration</a>
-                            </li>
-                            <li class="menu__item">
-                                <a class="header-nav__link" href="/login">Login</a>
-                            </li>
-                        </ul>
-
-                        <nav>
-                            <ul class="header-nav">
-                                @if (Auth::check())
-                                <li class="menu__item">
-                                    <a class="header-nav__link" href="/">Home</a>
-                                </li>
-                                <li class="menu__item">
-                                    <form class="form" action="/logout" method="post">
-                                        @csrf
-                                        <button class="header-nav__button">Logout</button>
-                                    </form>
-                                </li>
-                                <li class="menu__item">
-                                    <a class="header-nav__link" href="/mypage">Mypage</a>
-                                </li>
-                                @endif
-                            </ul>
-                        </nav>
-                    </div>
-
-
                     <div>
                         <a class="header__logo" href="/">
                             Rese
                         </a>
                     </div>
 
+                    <!-- ここに検索機能（インデックスページの時のみ） -->
+
+
+
                 </div>
             </div>
     </header>
 
     <main>
+        <div id="popup" class="popup">
+            <div class="popup__close">
+                <button class="popup__close" id="no" onclick="nofunc()"></button><br />
+            </div>
 
+            <nav class="menu__wrapper">
+                <ul class="popup__menu">
+                    @if (Auth::check())
+                    <li class="menu__item">
+                        <a class="header-nav__link" href="/">Home</a>
+                    </li>
+                    <li class="menu__item">
+                        <form class="form" action="/logout" method="post">
+                            @csrf
+                            <button class="header-nav__button">Logout</button>
+                        </form>
+                    </li>
+                    <li class="menu__item">
+                        <a class="header-nav__link" href="/my_page">Mypage</a>
+                    </li>
+                    @else
+                    <li class="menu__item">
+                        <a class="header-nav__link" href="/">Home</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="header-nav__link" href="/register">Registration</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="header-nav__link" href="/login">Login</a>
+                    </li>
+                    @endif
+                </ul>
+            </nav>
+        </div>
         @yield('content')
     </main>
 </body>

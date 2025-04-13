@@ -1,0 +1,27 @@
+.shop_detail__wrapper {
+    display: flex;
+}
+
+.shop_detail {
+    width: 50%;
+    margin: 20px;
+}
+
+.card__img {
+    width: 45vw;
+    height: 50%;
+}
+
+.shop__content__list {
+    display: flex;
+}
+
+.reservation {
+    width: 50%;
+    height: 80vh;
+    background-color: #305DFF;
+    padding: 10px 20px;
+    margin: 20px;
+
+}
+

@@ -47,5 +47,11 @@ class FortifyServiceProvider extends ServiceProvider
                 return Limit::perMinute(10)->by($email . $request->ip());
             }
         );
+
+        // 追記内容
+        $this->app->singleton(
+            \Laravel\Fortify\Contracts\RegisterResponse::class,
+            \App\Http\Responses\RegisterResponse::class
+        );
     }
 }

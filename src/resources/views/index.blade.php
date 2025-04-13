@@ -5,50 +5,27 @@
 @endsection
 
 @section('content')
-@foreach ($shops as $shop)
 <div class="shops-list">
+    @foreach ($shops as $shop)
     <div class="card">
-        <div class="card__img">
+        <div class="img__wrapper">
+            <img class="card__img" src="{{ asset('img/'.$shop->shopimg) }}" alt="{{ $shop->shopimg}}">
         </div>
         <div class="card__content">
-            <div class="shopname">{{$shop->shopname()}}</div>
+            <div class="shopname">{{$shop->shopname}}</div>
 
             <div class="card__content__list">
-                <p>{{$shop->region()}}</p>
-                <p>{{$shop->genre()}}</p>
+                <p>{{$shop->getRegion()}}</p>
+                <p>{{$shop->getGenre()}}</p>
             </div>
             <div class="card_action">
-                <button class="overview_button">
-                    詳しくみる
-                </button>
+                <input type=" button" class="overview_button" onclick="location.href='<?php echo route('shop_detail',['id'=>$shop->id]) ?>' " value="詳しくみる" />
+
                 <button class="favorite_button">
                 </button>
             </div>
         </div>
     </div>
-
-
-    <div class="card">
-        <div class="card__img">
-        </div>
-        <div class="card__content">
-            <div class="shopname">仙人</div>
-
-            <div class="card__content__list">
-                <p>#東京</p>
-                <p>#寿司</p>
-            </div>
-            <div class="card_action">
-                <button class="overview_button">
-                    詳しくみる
-                </button>
-                <button class="favorite_button">
-
-                </button>
-            </div>
-        </div>
-    </div>
-
+    @endforeach
 </div>
-@endforeach
 @endsection

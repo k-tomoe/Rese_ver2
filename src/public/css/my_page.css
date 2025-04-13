@@ -1,0 +1,17 @@
+.my_page__wrapper {
+    display: flex;
+}
+
+.reservation_situation {
+    width: 50%;
+    margin: 20px;
+}
+
+
+.favorite_shops {
+    width: 50%;
+    height: 80vh;
+    padding: 10px 20px;
+    margin: 20px;
+
+}

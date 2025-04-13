@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ShopDetailController;
+use App\Http\Controllers\MypageController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +18,17 @@ use App\Http\Controllers\ShopController;
 |
 */
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth')->group(
+    function () {
         Route::get('/', [AuthController::class, 'index']);
     }
 );
 
 Route::get('/', [ShopController::class, 'index']);
+
+Route::get('/shop_detail/{id}', [ShopDetailController::class, 'index'])->name('shop_detail');
+
+Route::post('/reservations', [ShopDetailController::class, 'create']);
+
+Route::get('/my_page', [MypageController::class, 'index']);
+
