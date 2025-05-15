@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Reservation extends Model
 {
@@ -27,26 +28,35 @@ class Reservation extends Model
         return $this->belongsTo('App\Models\User');
     }
 
-    // ショップidを取得
-    public function getShopid()
+    // ショップテーブルと結合
+    public function getShop()
     {
-        return optional($this->shopid)->shopid;
+        return DB::table('reservations')
+            ->join('shops', 'reservations.shop_id', '=', 'shops.id')
+            ->get();
     }
 
-    public function shopid()
-    {
-        return $this->belongsTo('App\Models\Shop');
-    }
+    // // ショップidを取得
+    // public function getShopid()
+    // {
+    //     return optional($this->shopid)->shopid;
+    // }
 
+    // public function shopid()
+    // {
+    //     return $this->belongsTo('App\Models\Shop');
+    // }
+
+    
     // ショップネームを取得
-    public function getShopname()
-    {
-        return optional($this->shopname)->shopname;
-    }
+    // public function getShopname()
+    // {
+    //     return optional($this->shopname)->shopname;
+    // }
 
-    public function shopname()
-    {
-        return $this->belongsTo('App\Models\Shop');
-    }
+    // public function shopname()
+    // {
+    //     return $this->belongsTo('App\Models\Shop');
+    // }
 
 }

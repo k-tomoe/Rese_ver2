@@ -13,25 +13,25 @@ class Favorite extends Model
         'shop_id' => 'required',
     );
 
-    // ユーザーidを取得
+    // ユーザーidを取得命名規則
     public function getUserid()
     {
-        return optional($this->userid)->userid;
+        return optional($this->users)->userid;
     }
-
-    public function userid()
+    // テーブル名
+    public function users()
     {
-        return $this->belongsTo('App\Models\User');
+        return $this->belongsToMany('App\Models\User');
     }
 
     // ショップidを取得
     public function getShopid()
     {
-        return optional($this->shopid)->shopid;
+        return optional($this->shops)->shopid;
     }
 
-    public function shopid()
+    public function shops()
     {
-        return $this->belongsTo('App\Models\Shop');
+        return $this->belongsToMany('App\Models\Shop');
     }
 }

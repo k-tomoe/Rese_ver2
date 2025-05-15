@@ -35,6 +35,29 @@
     <div class="favorite_shops">
         <h3>お気に入り店舗</h3>
 
+        @foreach ($favorites as $favorite)
+        <div class="card">
+            <div class="img__wrapper">
+                <img class="card__img" src="{{ asset('img/'.$favorite->shopimg) }}" alt="{{ $favorite->shopimg}}">
+            </div>
+            <div class="card__content">
+                <div class="shopname">{{$favorite->shopname}}</div>
+
+                <div class="card__content__list">
+                    <p>{{$favorite->getRegion()}}</p>
+                    <p>{{$favorite->getGenre()}}</p>
+                </div>
+                <div class="card_action">
+                    <input type=" button" class="overview_button" onclick="location.href='<?php echo route('shop_detail', ['id' => $favorite->id]) ?>' " value="詳しくみる" />
+
+                    <input type=" button" class="favorite_button" onclick="location.href='<?php echo route('shop_favorite', ['id' => $favorite->id]) ?>' " />
+
+                    </button>
+                </div>
+            </div>
+        </div>
+        @endforeach
+
     </div>
 
 </div>

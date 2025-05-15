@@ -19,9 +19,10 @@
                 <p>{{$shop->getGenre()}}</p>
             </div>
             <div class="card_action">
-                <input type=" button" class="overview_button" onclick="location.href='<?php echo route('shop_detail',['id'=>$shop->id]) ?>' " value="詳しくみる" />
+                <input type=" button" class="overview_button" onclick="location.href='<?php echo route('shop_detail', ['id' => $shop->id]) ?>' " value="詳しくみる" />
 
-                <button class="favorite_button">
+                <input type=" button" class="favorite_button" onclick="location.href='<?php echo route('shop_favorite', ['id' => $shop->id]) ?>' " />
+
                 </button>
             </div>
         </div>

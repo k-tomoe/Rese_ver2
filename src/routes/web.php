@@ -28,7 +28,8 @@ Route::get('/', [ShopController::class, 'index']);
 
 Route::get('/shop_detail/{id}', [ShopDetailController::class, 'index'])->name('shop_detail');
 
+Route::get('/shop_favorite/{id}', [ShopController::class, 'create'])->name('shop_favorite');
+
 Route::post('/reservations', [ShopDetailController::class, 'create']);
 
 Route::get('/my_page', [MypageController::class, 'index']);
-
